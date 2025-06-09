@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from common.PIN_detection import check_and_handle_pin
 from common.Click_AC_Tab_By_Name import click_ac_tab_by_name
-
+from webdriver_manager.chrome import ChromeDriverManager
 # Set up Chrome options to handle SSL certificate errors
 chrome_options = Options()
 chrome_options.add_argument('--ignore-ssl-errors=yes')
@@ -17,10 +17,10 @@ chrome_options.add_argument("--incognito")
 
 # Initialize Chrome driver with the updated approach
 service = Service("C:\\Program Files (x86)\\chromedriver.exe")
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 driver.maximize_window()
-driver.get("http://10.44.15.147/index.html")
+driver.get("http://10.44.15.202/index.html")
 
 wait = WebDriverWait(driver, 10)
 

@@ -17,7 +17,7 @@ service = Service("C:\\Program Files (x86)\\chromedriver.exe")
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
 # Navigate to printer EWS
-driver.get("http://10.44.15.120/index.html")
+driver.get("http://10.44.15.202/index.html")
 
 try:
     # Wait for the page to load and the search button to be clickable
